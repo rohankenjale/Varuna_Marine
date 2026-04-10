@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #aa3bff;
+  --color-primary-light: #c084fc;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 border-gray-200;
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
