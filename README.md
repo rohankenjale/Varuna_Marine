@@ -5,10 +5,6 @@ A full-stack web application designed to help maritime operators calculate, anal
 
 The platform provides a comprehensive suite of tools to handle baseline route comparisons, banking of surplus compliance (Article 20), and complex greedy allocation for compliance pooling (Article 21).
 
-> This project was developed autonomously using an orchestrated AI workflow (Antigravity IDE & Claude Code) adhering to strict architectural constraints, with late-stage PR auditing via CodeRabbit.
-
----
-
 ## Architecture Summary
 
 Both the **Backend** and **Frontend** are divided into concentric layers to strictly isolate the Domain Business Logic from external frameworks, databases, and UI components. This adheres to the **Clean Architecture / Hexagonal (Ports & Adapters)** pattern.
