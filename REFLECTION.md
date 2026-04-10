@@ -1,0 +1,16 @@
+# Reflection & Learnings
+
+Building the FuelEU Maritime Platform offered a profound shift in how I approach software engineering. Transitioning from a traditional full-stack development process to orchestrating autonomous AI agents required stepping back from the role of a typist and adopting the mindset of a strict system architect. This project, heavily reliant on Clean Architecture and Test-Driven Development, served as a perfect crucible for understanding the true capabilities—and limitations—of modern AI tooling.
+
+### What I Learned Using AI Agents
+The most crucial lesson was that LLMs are exceptional at pattern matching but fundamentally lack inherent architectural discipline. Without rigorous constraints, tools like Claude Code will naturally default to the path of least resistance, which usually means tightly coupled MVC patterns. I quickly learned that AI needs to be boxed in. By enforcing a strict Hexagonal (Ports & Adapters) boundary and explicitly forbidding the AI from importing external frameworks or the Prisma ORM into the `src/core/` directories, I maintained the purity of the domain. 
+
+Furthermore, I learned that Test-Driven Development (TDD) is the ultimate leash for an AI agent. By forcing the agent to write the Vitest assertions for the complex Article 21 greedy pooling algorithms first, I established a mathematical safety net before any implementation code was generated. The AI became an engine that worked *to satisfy the tests*, rather than a black box generating unverified logic.
+
+### Efficiency Gains vs. Manual Coding
+The velocity increase achieved by combining Antigravity IDE with Claude Code was staggering, particularly in the outer layers of the architecture. Manually scaffolding Express controllers, writing repetitive React Query hooks, styling Tailwind interfaces, and mapping Prisma schemas typically consumes hours of tedious boilerplate typing. The AI executed these tasks in minutes. Additionally, translating the verbose regulatory formulas for FuelEU GHG intensity into functional TypeScript logic was vastly accelerated. 
+
+However, the nature of the work shifted. The time saved on raw typing was partially reallocated to context engineering, code review, and correcting minor hallucinations—such as the AI initially attempting to leak Prisma data types into the outbound ports. Ultimately, the efficiency gain is not just in speed, but in cognitive load; the AI handled the mundane boilerplate, freeing me to focus entirely on the regulatory domain invariants and the overarching system design.
+
+### Improvements I'd Make Next Time
+Reflecting on the workflow, my biggest bottleneck was constantly correcting the AI's tendency to leak Prisma ORM types into the pure TypeScript domain. Next time, I would improve my initial prompt engineering by explicitly defining an "Anti-Corruption Layer" pattern in the base instructions. By forcing the agent to generate strict data mappers before writing the repository implementations, I could prevent architectural contamination entirely, shifting my workflow from reactive auditing to proactive, constraint-driven generation.
