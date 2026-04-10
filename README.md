@@ -96,7 +96,7 @@ Host: localhost:3000
 ```json
 [
   {
-    "routeId": "RT-001",
+    "routeId": "R-001",
     "vesselType": "Container",
     "fuelType": "HFO",
     "ghgIntensity": 92.5,
@@ -104,7 +104,7 @@ Host: localhost:3000
     "compliant": false
   },
   {
-    "routeId": "RT-002",
+    "routeId": "R-002",
     "vesselType": "Tanker",
     "fuelType": "LNG",
     "ghgIntensity": 78.2,
@@ -122,8 +122,8 @@ Host: localhost:3000
 Content-Type: application/json
 
 {
-  "shipId": "IMO-1234567",
-  "year": 2026,
+  "shipId": "R-001",
+  "year": 2025,
   "amountToBank": 50000
 }
 ```
@@ -133,7 +133,7 @@ Content-Type: application/json
 {
   "success": true,
   "data": {
-    "shipId": "IMO-1234567",
+    "shipId": "R002",
     "cb_before": 150000,
     "banked_amount": 50000,
     "cb_after": 100000,
@@ -150,10 +150,10 @@ Host: localhost:3000
 Content-Type: application/json
 
 {
-  "year": 2026,
+  "year": 2024,
   "members": [
-    { "shipId": "IMO-111", "adjustedCB": 10000 },
-    { "shipId": "IMO-222", "adjustedCB": -4000 }
+    { "shipId": "R-003", "adjustedCB": 10000 },
+    { "shipId": "R-004", "adjustedCB": -4000 }
   ]
 }
 ```
@@ -164,8 +164,8 @@ Content-Type: application/json
   "success": true,
   "poolId": "pool-uuid-xyz",
   "allocation": [
-    { "shipId": "IMO-111", "cbBefore": 10000, "cbAfter": 6000 },
-    { "shipId": "IMO-222", "cbBefore": -4000, "cbAfter": 0 }
+    { "shipId": "R-003", "cbBefore": 10000, "cbAfter": 6000 },
+    { "shipId": "R-004", "cbBefore": -4000, "cbAfter": 0 }
   ]
 }
 ```
