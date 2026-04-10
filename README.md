@@ -22,7 +22,7 @@ Both the **Backend** and **Frontend** are divided into concentric layers to stri
 
 ### Prerequisites
 - Node.js (v20+)
-- PostgreSQL database running locally (default connection string: `postgresql://postgres:postgres@localhost:5432/varuna_marine`)
+- PostgreSQL database running locally (default connection string: `postgresql://postgres:postgres@localhost:5432/varuna_marine`, add your DATABASE_URL in a .env file)
 
 ### 1. Backend & Database Setup
 
