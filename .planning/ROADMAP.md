@@ -5,7 +5,6 @@ You are acting as a strict Clean Architecture (Hexagonal/Ports & Adapters) exper
 1. Execute these tasks sequentially. Do not skip ahead.
 2. **STRICT RULE:** When building the `core/` directories, you are forbidden from importing ORMs (Prisma, TypeORM, Kysely), web frameworks (Express, React), or UI libraries. The core must be 100% pure TypeScript.
 3. After completing a major phase, pause and summarize what you built for my review before proceeding.
-4. **REVIEW PROTOCOL:** After Phase 5 (Core Logic) and Phase 6 (Backend Adapters), you must commit and pause. I will trigger a CodeRabbit AI review on the Pull Request to ensure no Hexagonal Architecture boundaries were breached before we proceed to the Frontend.
 
 ---
 
@@ -101,7 +100,7 @@ Now, implement the actual Use Cases to make the tests from Phase 4 pass. These m
 ## Phase 6: Backend Infrastructure & Adapters
 
 - [ ] **Step 6.1: Database Setup (`infrastructure/db`)**
-  - Install necessary database packages (e.g., `pg`, `drizzle-orm` or whatever lightweight query builder is preferred).
+  - Install necessary database packages (e.g., `pg`, `prisma` or whatever lightweight query builder is preferred).
   - Create the database schema definition matching the prompt requirements.
   - Create a seed script (`seed.ts`) to populate the 5 initial routes with one marked as `is_baseline = true`.
 

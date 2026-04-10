@@ -1,0 +1,25 @@
+# .coderabbit.yaml
+version: 2
+language: "en-US"
+reviews:
+  profile: "strict"
+  request_changes_workflow: false
+  high_level_summary: true
+  poem: false
+  review_status: true
+  collapse_walkthrough: false
+  path_filters:
+    - "!frontend/src/assets/**"
+    - "!frontend/public/**"
+    - "!backend/dist/**"
+    - "!node_modules/**"
+  custom_instructions: |
+    You are an expert software architect acting as a senior peer reviewer. 
+    This project strictly adheres to Clean/Hexagonal Architecture. 
+    
+    CRITICAL ARCHITECTURAL RULES:
+    1. DOMAIN PURITY: Ensure NO dependencies from `adapters/`, external libraries, web frameworks (Express, React), or ORMs (Prisma) leak into `src/core/domain/` or `src/core/application/`.
+    2. DEPENDENCY INVERSION: Verify all application use cases inject outbound dependencies via interfaces defined in `src/core/ports/`.
+    3. UI ABSTRACTION: In the frontend, ensure UI components (`adapters/ui`) only communicate with backend APIs through application hooks and defined Outbound Gateways (`core/ports`), never directly via raw Axios calls in the components.
+    
+    If any PR violates these boundary rules, aggressively flag it and request changes.

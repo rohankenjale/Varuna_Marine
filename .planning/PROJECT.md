@@ -8,10 +8,10 @@ Both the Backend and Frontend must adhere to concentric architectural layers.
 1. **Domain Layer:** Pure TypeScript. No dependencies.
 2. **Ports:** Interfaces defining outbound communication.
 3. **Application Layer:** Use Cases orchestrating domain logic. Depends only on Domain and Ports.
-4. **Adapters:** Infrastructure (Drizzle/Postgres, Axios) and UI (Express, React/Tailwind).
+4. **Adapters:** Infrastructure (Prisma/Postgres, Axios) and UI (Express, React/Tailwind).
 
 ## Tech Stack
-- **Backend:** Node.js (v20+), TypeScript, Express, Drizzle ORM, PostgreSQL, Vitest.
+- **Backend:** Node.js (v20+), TypeScript, Express, Prisma ORM, PostgreSQL, Vitest.
 - **Frontend:** React, Vite, TailwindCSS, React Query, Axios, Recharts, Lucide-React.
 
 ## STRICT AI ORCHESTRATION RULES

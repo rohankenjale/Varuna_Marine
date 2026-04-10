@@ -13,7 +13,7 @@ The core implementation of the FuelEU Maritime Platform is complete. The system 
 - **AI Tooling Constraints:** CodeRabbit constraints were strictly followed to prevent adapter logic from polluting the domain.
 
 ## Known Issues / Blockers
-- **None.** The application compiles, the database seeds correctly via `drizzle-orm`, and both backend and frontend development servers start without errors. 
+- **None.** The application compiles, the database seeds correctly via `Prisma-orm`, and both backend and frontend development servers start without errors. 
 
 ## Next Steps (Human Actions)
 1. Human to review the generated `REFLECTION.md` and `AGENT_WORKFLOW.md`.
